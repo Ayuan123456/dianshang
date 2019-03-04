@@ -1,0 +1,27 @@
+@import './base.less';
+#main{
+    background-color: #ccc;
+    display: flex;
+    .left{
+        width: .8rem;
+        .mui-table-view-cell::after{
+            left: 0;
+        }
+        .mui-table-view-cell{
+            background-color: #ffffff;
+        }
+        .mui-table-view-cell.active{
+            background-color: #ccc;
+        }
+    }
+    .right{
+        flex: 1;
+        padding: .1rem .1rem;
+        .mui-col-xs-4{
+            padding: .05rem 0;
+            img{
+                width: 100%;
+            }
+        }
+    }
+}

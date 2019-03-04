@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./lib/swiper/css/swiper.css">
+    <link rel="stylesheet" href="./less/category.css">
+
+
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <div class="left">
+            <a href="./index.html"><i class="fa fa-arrow-left"></i></a>
+        </div>
+        <div class="center">
+            <form >
+                <input type="search" placeholder="请输入你想要的商品">
+                
+            </form>
+        </div>
+        <div class="right">
+            <a href="./search.html"><i class="fa fa-search"></i></a>
+        </div>
+    </header>
+    <main id="main">
+          <div class="left">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell active">运动馆</li>
+                <li class="mui-table-view-cell">女士馆</li>
+                <li class="mui-table-view-cell">男士馆</li>
+            </ul>
+          </div>  
+          <div class="right">
+              <div class="mui-row">
+                    
+              </div>
+          </div>
+    </main>
+    <footer id="footer" >
+        <div class="mui-row">
+            <div class="mui-col-xs-3">
+                <a href="index.html"><i class="fa fa-home"></i><span>首页</span></a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="#"><i class="fa fa-bars"></i><span>分类</span></a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="#"><i class="fa fa-shopping-cart"></i><span>购物车</span></a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="#"><i class="fa fa-user"></i><span>个人中心</span></a>
+            </div>
+        </div>
+    </footer>
+    <script id="leftTpl" type="text/html">
+        {{ each rows value i }}
+        
+        <li class="mui-table-view-cell {{i == 0?'active' : ''}}" data-id={{value.id}}>{{ value.categoryName }}</li>
+        
+        {{/each}}
+        
+    </script>
+    <!-- 右侧请求 -->
+    <script id="rightTpl" type="text/html">
+        {{each rows value i}}
+            <div class="mui-col-xs-4">
+                <a href="#">
+                    <img src="{{value.brandLogo}}" alt="">
+                    <p>{{ value.brandName}}</p>
+                </a>
+            </div>
+       
+        {{ /each}}
+    </script>
+    <script src="./lib/mui/js/mui.js"></script>
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./lib/swiper/js/swiper.js"></script>
+    <script src="./js/category.js"></script>
+    
+</body>
+
+</html>

@@ -51,6 +51,8 @@ html {
   margin-top: .05rem;
   margin-bottom: 0;
   text-align: left;
+  padding: 0;
+  color: #888888;
 }
 #header .right {
   width: .45rem;
@@ -63,6 +65,7 @@ html {
   width: 100%;
   height: .45rem;
   bottom: 0;
+  background-color: #006699;
 }
 #footer .mui-row {
   height: 100%;
@@ -85,35 +88,29 @@ html {
   position: relative;
   height: 100%;
 }
-#main a {
-  display: block;
-}
-#main a img {
-  width: 100%;
-}
-#main .nav {
-  padding: .1rem .05rem;
-}
-#main .banner .mui-col-xs-8 a {
-  width: 100%;
+#main {
+  background-color: #ccc;
   display: flex;
-  flex-wrap: wrap;
 }
-#main .banner .mui-col-xs-8 a img {
-  width: 50%;
-  height: 1.2rem;
+#main .left {
+  width: .8rem;
 }
-#main .banner .mui-col-xs-4 a img {
+#main .left .mui-table-view-cell::after {
+  left: 0;
+}
+#main .left .mui-table-view-cell {
+  background-color: #ffffff;
+}
+#main .left .mui-table-view-cell.active {
+  background-color: #ccc;
+}
+#main .right {
+  flex: 1;
+  padding: .1rem .1rem;
+}
+#main .right .mui-col-xs-4 {
+  padding: .05rem 0;
+}
+#main .right .mui-col-xs-4 img {
   width: 100%;
-  height: 2.4rem;
-}
-#main .brand {
-  padding: .1rem ;
-}
-#main .brand a {
-  display: block;
-}
-#main .brand a img {
-  width: 100%;
-  height: 100%;
 }

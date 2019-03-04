@@ -51,6 +51,8 @@ html {
   margin-top: .05rem;
   margin-bottom: 0;
   text-align: left;
+  padding: 0;
+  color: #888888;
 }
 #header .right {
   width: .45rem;
@@ -63,6 +65,7 @@ html {
   width: 100%;
   height: .45rem;
   bottom: 0;
+  background-color: #006699;
 }
 #footer .mui-row {
   height: 100%;
@@ -73,9 +76,13 @@ html {
   justify-content: center;
   height: .45rem;
   text-align: center;
+  color: white;
 }
 #footer .mui-row a span {
   line-height: 1;
+}
+#footer .mui-row a.active {
+  color: red;
 }
 #main {
   padding: .45rem 0;
@@ -85,35 +92,22 @@ html {
   position: relative;
   height: 100%;
 }
-#main a {
-  display: block;
-}
-#main a img {
-  width: 100%;
-}
-#main .nav {
-  padding: .1rem .05rem;
-}
-#main .banner .mui-col-xs-8 a {
-  width: 100%;
+#main form {
   display: flex;
-  flex-wrap: wrap;
+  padding: .1rem .2rem .1rem .2rem ;
 }
-#main .banner .mui-col-xs-8 a img {
-  width: 50%;
-  height: 1.2rem;
+#main form input {
+  border-radius: 0.06rem 0 0 .06rem;
+  text-align: left;
+  border: 0.01rem solid #006699;
+  background-color: #ffffff;
 }
-#main .banner .mui-col-xs-4 a img {
-  width: 100%;
-  height: 2.4rem;
+#main form button {
+  height: .34rem;
+  border-radius: 0  0.06rem .06rem 0 ;
+  border: 0.01rem solid #006699;
 }
-#main .brand {
-  padding: .1rem ;
-}
-#main .brand a {
-  display: block;
-}
-#main .brand a img {
-  width: 100%;
-  height: 100%;
+#main .mui-card-content {
+  height: auto;
+  line-height: .44rem;
 }
