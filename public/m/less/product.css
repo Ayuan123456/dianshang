@@ -107,3 +107,22 @@ html {
   border-radius: 0  0.06rem .06rem 0 ;
   border: 0.01rem solid #006699;
 }
+#main .mui-card {
+  margin: 0;
+}
+#main .mui-card a.active {
+  color: red;
+}
+#main .mui-card .mui-card-content .mui-row .mui-col-xs-6 {
+  padding: .1rem .05rem;
+  text-align: center;
+}
+#main .mui-card .mui-card-content .mui-row .mui-col-xs-6 img {
+  width: 100%;
+}
+#main .mui-card .mui-card-content .mui-row .mui-col-xs-6 .product-name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}

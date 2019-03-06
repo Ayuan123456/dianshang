@@ -41,50 +41,48 @@ $(function(){
          //清空搜索框
          $('.seachBar').val('')
          searchHis()
+         location ='productList.html?search='+his+'&time='+new Date().getTime()
     })
     //搜索事件
     searchHis()
-    
-})
-mui('.mui-scroll-wrapper').scroll({
-	deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
-});
-//删除函数
-$('.ulList').on('tap','i',function(){
-    var hisLog=localStorage.getItem('key')
-    if (hisLog) {
+    mui('.mui-scroll-wrapper').scroll({
+        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+    });
+    //删除函数
+    $('.ulList').on('tap','i',function(){
+        var hisLog=localStorage.getItem('key')
+        
+        //遍历,添加ID
+        //获取id
         hisLog=JSON.parse(hisLog)
-    }else{
-        hisLog=[] 
-    }
-    //遍历,添加ID
-    //获取id
-    var idd=$(this).data('id')
-    console.log($(this).data('id'));
-    hisLog.splice(idd,1)
-    hisLog=JSON.stringify(hisLog)
-         
-    localStorage.setItem('key',hisLog)
-    searchHis()
-})
- 
-  //清空函数
-  $('.clearHis').on('tap',function(){
-      localStorage.clear()
-      $('.ulList').empty()
-      $('.ulList').html(' <li class="mui-table-view-cell" >在下实在是不能显示更多了</li>')
-  })
-  function searchHis() {
-    var hisLog=localStorage.getItem('key')
-     if (hisLog) {
-         hisLog=JSON.parse(hisLog)
-     }else{
-         hisLog=[{'keyword':'在下实在是不能显示更多了'}]
-         
-     }
-     //调用模板
-
-     var html=template('historyTpl',{hisLog})
-     $('.ulList').html(html)
+        var idd=$(this).data('id')
+        console.log($(this).data('id'));
+        hisLog.splice(idd,1)
+        hisLog=JSON.stringify(hisLog)
+             
+        localStorage.setItem('key',hisLog)
+        searchHis()
+    })
+     
+      //清空函数
+      $('.clearHis').on('tap',function(){
+          localStorage.removeItem('key')
+          $('.ulList').empty()
+          $('.ulList').html(' <li class="mui-table-view-cell" >在下实在是不能显示更多了</li>')
+      })
+      function searchHis() {
+        var hisLog=localStorage.getItem('key')
+         if (hisLog) {
+             hisLog=JSON.parse(hisLog)
+         }else{
+             hisLog=[{'keyword':'在下实在是不能显示更多了'}]
+             
+         }
+         //调用模板
     
-}
+         var html=template('historyTpl',{hisLog})
+         $('.ulList').html(html)
+        
+    }
+    
+})
